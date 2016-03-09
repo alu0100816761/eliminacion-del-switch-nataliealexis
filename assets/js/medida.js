@@ -19,12 +19,13 @@ Medida.match = function (valor) {
 }
 
 Medida.measures = {};
-Medida.measures.c = "Celsius";
-Medida.measures.f = "Fahrenheit";
-Medida.measures.k = "Kelvin";
 
 Medida.convertir = function(valor) {
   var measures = Medida.measures;
+
+  measures.c  = Celsius;
+  measures.f = Fahrenheit;
+  measures.k = Kelvin;
 
   var match = Medida.match(valor);
   if (match) {
@@ -33,13 +34,12 @@ Medida.convertir = function(valor) {
         destino = match.para;
 
     try {
-      console.log("hola2");
       var source = new measures[tipo](numero);                  // new Fahrenheit(32)
-      console.log("hola");
       var target = "to"+measures[destino].name;                 // "toCelsius"
-      return source[target]().toFixed(2) + " "+target;          // "0 Celsius"
+      return source[target]().toFixed(2) + " "+measures[destino].name;          // "0 Celsius"
     }
     catch(err) {
+      console.log(err);
       return 'Desconozco como convertir desde "'+tipo+'" hasta "'+destino+'"';
     }
   }

@@ -27,7 +27,6 @@ Celsius.prototype.toKelvin = function () {
 function Kelvin(valor)
 {
   Temperatura.call(this, valor);
-  this.measures.k = Kelvin;
 }
 
 Kelvin.prototype = new Temperatura();
@@ -46,7 +45,6 @@ Kelvin.prototype.toFahrenheit = function () {
 function Fahrenheit(valor)
 {
   Temperatura.call(this, valor);
-  this.measures.f = Fahrenheit;
 }
 
 Fahrenheit.prototype = new Temperatura();
