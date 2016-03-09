@@ -2,7 +2,6 @@ function Medida (valor,tipo)
 {
     this.valor = valor;
     this.tipo = tipo || "";
-    this.measures = {};
 }
 
 Medida.match = function (valor) {
@@ -19,6 +18,11 @@ Medida.match = function (valor) {
   return valor;
 }
 
+Medida.measures = {};
+Medida.measures.c = "Celsius";
+Medida.measures.f = "Fahrenheit";
+Medida.measures.k = "Kelvin";
+
 Medida.convertir = function(valor) {
   var measures = Medida.measures;
 
@@ -29,7 +33,9 @@ Medida.convertir = function(valor) {
         destino = match.para;
 
     try {
+      console.log("hola2");
       var source = new measures[tipo](numero);                  // new Fahrenheit(32)
+      console.log("hola");
       var target = "to"+measures[destino].name;                 // "toCelsius"
       return source[target]().toFixed(2) + " "+target;          // "0 Celsius"
     }

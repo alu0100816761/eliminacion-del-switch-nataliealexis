@@ -9,7 +9,6 @@ Temperatura.prototype.constructor = Temperatura;
 function Celsius(valor)
 {
   Temperatura.call(this, valor);
-  this.measures.c = Celsius;
 }
 
 Celsius.prototype = new Temperatura();
