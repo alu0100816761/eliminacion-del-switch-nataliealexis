@@ -24,9 +24,9 @@ Medida.convertir = function(valor) {
 
   var match = Medida.match(valor);
   if (match) {
-    var numero = match.numero,
-        tipo   = match.tipo,
-        destino = match.destino;
+    var numero = match.val,
+        tipo   = match.tip,
+        destino = match.para;
 
     try {
       var source = new measures[tipo](numero);                  // new Fahrenheit(32)
