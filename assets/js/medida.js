@@ -37,8 +37,8 @@ Medida.convertir = function(valor) {
   var match = Medida.match(valor);
   if (match) {
     var numero = match.val,
-        tipo   = match.tip,
-        destino = match.para;
+        tipo   = match.tip.toLowerCase(),
+        destino = match.para.toLowerCase();
 
     try {
       var source = new measures[tipo](numero);                  // new Fahrenheit(32)
