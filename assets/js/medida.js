@@ -8,11 +8,11 @@ Medida.match = function (valor) {
   var regexp = XRegExp('^([ ]*) \n' +
                     '(?<val> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?) # val \n' +
                     '([ ]*) \n' +
-                    '(?<tip> [fckFCK]) # tip \n' +
+                    '(?<tip> [a-zA-Z]) # tip \n' +
                     '([ ]*) \n' +
                     '(?<to> (to))? # to \n' +
                     '([ ]*) \n' +
-                    '(?<para> [fckFCK]) # para \n' +
+                    '(?<para> [a-zA-Z]) # para \n' +
                     '([ ]*)$','x');
   valor = XRegExp.exec(valor, regexp);
   return valor;
